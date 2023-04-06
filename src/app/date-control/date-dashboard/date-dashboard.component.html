@@ -1,0 +1,24 @@
+<div class="date-input-block">
+  <h1 class="title" style="text-align: center">Age calculator app</h1>
+  <div class="date-input-div">
+    <form [formGroup]="dateForm" class="date-input-div">
+      <mat-form-field appearance="outline">
+        <mat-label>Day</mat-label>
+        <input formControlName="day" matInput placeholder="Day" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Month</mat-label>
+        <input formControlName="month" matInput placeholder="Month" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Year</mat-label>
+        <input formControlName="year" matInput placeholder="Year" />
+        <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+      </mat-form-field>
+    </form>
+  </div>
+</div>

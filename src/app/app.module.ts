@@ -8,9 +8,16 @@ import { DateControlModule } from './date-control/date-control.module';
 import { DayValidatorDirective } from './directives/day-validator.directive';
 import { MonthValidatorDirective } from './directives/month-validator.directive';
 import { YearValidatorDirective } from './directives/year-validator.directive';
+import { DateValidatorDirective } from './directives/date-validator.directive';
 
 @NgModule({
-  declarations: [AppComponent, DayValidatorDirective, MonthValidatorDirective, YearValidatorDirective],
+  declarations: [
+    AppComponent,
+    DayValidatorDirective,
+    MonthValidatorDirective,
+    YearValidatorDirective,
+    DateValidatorDirective,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

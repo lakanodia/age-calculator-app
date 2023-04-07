@@ -52,6 +52,7 @@
           formControlName="year"
           matInput
           placeholder="Year"
+          appYearValidator
         />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
 
@@ -66,6 +67,13 @@
     </form>
   </div>
   <div class="button-div">
-    <button mat-raised-button color="accent">Calculate</button>
+    <button
+      mat-raised-button
+      color="accent"
+      (click)="calculateAge()"
+      [disabled]="ageForm.invalid"
+    >
+      Calculate
+    </button>
   </div>
 </div>

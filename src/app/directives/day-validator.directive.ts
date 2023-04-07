@@ -6,6 +6,13 @@ import {
   ValidatorFn,
 } from '@angular/forms';
 
+export function dayValidator(): ValidatorFn {
+  const validator = new DayValidatorDirective();
+  return (control: AbstractControl): { [key: string]: any } | null => {
+    return validator.validate(control);
+  };
+}
+
 @Directive({
   selector: '[appDayValidator]',
   providers: [
@@ -23,3 +30,5 @@ export class DayValidatorDirective implements Validator {
     return null;
   }
 }
+
+

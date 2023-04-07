@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { dayValidator } from 'src/app/directives/day-validator.directive';
 
 @Component({
   selector: 'app-date-dashboard',
@@ -7,22 +8,25 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./date-dashboard.component.scss'],
 })
 export class DateDashboardComponent implements OnInit {
-  dateForm = new FormGroup({
-    day: new FormControl('', [Validators.required, Validators.maxLength(2)]),
+  ageForm = new FormGroup({
+    day: new FormControl(
+      '',
+      Validators.compose([Validators.required, dayValidator()])
+    ),
     month: new FormControl('', Validators.required),
     year: new FormControl('', Validators.required),
   });
 
   get day() {
-    return this.dateForm.get('day') as FormControl;
+    return this.ageForm.get('day') as FormControl;
   }
 
   get month() {
-    return this.dateForm.get('month') as FormControl;
+    return this.ageForm.get('month') as FormControl;
   }
 
   get year() {
-    return this.dateForm.get('year') as FormControl;
+    return this.ageForm.get('year') as FormControl;
   }
 
   constructor() {}

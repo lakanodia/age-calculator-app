@@ -1,7 +1,7 @@
 <div class="date-input-block">
   <h1 class="title" style="text-align: center">Age calculator app</h1>
   <div class="date-input-div">
-    <form [formGroup]="dateForm" class="date-input-div">
+    <form [formGroup]="ageForm" class="date-input-div">
       <mat-form-field appearance="outline">
         <mat-label>Day</mat-label>
         <input
@@ -10,15 +10,16 @@
           placeholder="Day"
           class="example-right-align"
           type="number"
+          appDayValidator
         />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
 
-        <mat-error *ngIf="day.invalid">{{
+        <mat-error *ngIf="day.errors?.['required']">{{
           "You must enter a value"
         }}</mat-error>
 
-        <mat-error *ngIf="day.errors?.['maxlength']"
-          >{{ "Length must be a maximum 2 character" }}
+        <mat-error *ngIf="day.errors?.['invalidDay']"
+          >{{ "The day number must be between 1-31" }}
         </mat-error>
       </mat-form-field>
 
@@ -48,3 +49,9 @@
     </form>
   </div>
 </div>
+
+<!-- // <input type="text" id="day" formControlName="day" appDayValidator>
+// <div *ngIf="ageForm.controls.day.invalid && (ageForm.controls.day.dirty || ageForm.controls.day.touched)">
+//   <div *ngIf="ageForm.controls.day.errors.required">Day is required.</div>
+//   <div *ngIf="ageForm.controls.day.errors.invalidDay">Day must be between 1-31.</div>
+// </div> -->

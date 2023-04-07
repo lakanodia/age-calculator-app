@@ -1,5 +1,5 @@
 .date-input-block {
-  color: rgb(0, 255, 229);
+  color: #69f0ae;
   max-width: 800px;
   width: 100%;
   margin: 50px auto;
@@ -17,5 +17,11 @@
     input.example-right-align::-webkit-inner-spin-button {
       display: none;
     }
+  }
+  .button-div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
   }
 }

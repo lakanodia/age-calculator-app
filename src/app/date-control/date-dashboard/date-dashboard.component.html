@@ -54,13 +54,18 @@
           placeholder="Year"
         />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="year.errors?.['required']">{{
+          "You must enter a value"
+        }}</mat-error>
+
+        <mat-error *ngIf="year.errors?.['invalidYear']"
+          >{{ "Year in invalid" }}
+        </mat-error>
       </mat-form-field>
     </form>
   </div>
+  <div class="button-div">
+    <button mat-raised-button color="accent">Calculate</button>
+  </div>
 </div>
-
-<!-- // <input type="text" id="day" formControlName="day" appDayValidator>
-// <div *ngIf="ageForm.controls.day.invalid && (ageForm.controls.day.dirty || ageForm.controls.day.touched)">
-//   <div *ngIf="ageForm.controls.day.errors.required">Day is required.</div>
-//   <div *ngIf="ageForm.controls.day.errors.invalidDay">Day must be between 1-31.</div>
-// </div> -->

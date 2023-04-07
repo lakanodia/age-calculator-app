@@ -77,5 +77,13 @@
     </button>
   </div>
 
-  <div></div>
+  <div class="age-div" *ngIf="age">
+    <div class="age-text">{{ age.years }} <span class="white">years</span></div>
+
+    <div class="age-text">
+      {{ age.months }} <span class="white">month</span>
+    </div>
+
+    <div class="age-text">{{ age.days }} <span class="white">day</span></div>
+  </div>
 </div>

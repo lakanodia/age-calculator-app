@@ -11,7 +11,7 @@ import { yearValidator } from 'src/app/directives/year-validator.directive';
   styleUrls: ['./date-dashboard.component.scss'],
 })
 export class DateDashboardComponent implements OnInit {
-  isValidDate!: null;
+  age: { years: number; months: number; days: number } | undefined;
 
   constructor() {}
 
@@ -40,9 +40,18 @@ export class DateDashboardComponent implements OnInit {
 
   calculateAge() {
     if (this.ageForm.valid) {
-      console.log(this.ageForm.value);
-    } else {
-      alert('Date Is Not Valid');
+      const inputDate = new Date(
+        this.year.value,
+        this.month.value,
+        this.day.value
+      );
+      const diff = Date.now() - inputDate.getTime();
+      const ageDate = new Date(diff);
+      this.age = {
+        years: ageDate.getUTCFullYear() - 1970,
+        months: ageDate.getUTCMonth(),
+        days: ageDate.getUTCDate() - 1, // Subtract 1 to account for zero-indexed days
+      };
     }
   }
 }

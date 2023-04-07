@@ -7,9 +7,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AgeResultComponent } from './age-result/age-result.component';
 
 @NgModule({
-  declarations: [DateDashboardComponent],
+  declarations: [DateDashboardComponent, AgeResultComponent],
   imports: [
     CommonModule,
     MatFormFieldModule,

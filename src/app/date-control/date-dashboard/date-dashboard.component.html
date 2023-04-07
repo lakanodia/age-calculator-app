@@ -31,8 +31,17 @@
           formControlName="month"
           matInput
           placeholder="Month"
+          appMonthValidator
         />
         <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+
+        <mat-error *ngIf="month.errors?.['required']">{{
+          "You must enter a value"
+        }}</mat-error>
+
+        <mat-error *ngIf="month.errors?.['invalidMonth']"
+          >{{ "The day number must be between 1-12" }}
+        </mat-error>
       </mat-form-field>
 
       <mat-form-field appearance="outline">

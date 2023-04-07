@@ -7,9 +7,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { DateControlModule } from './date-control/date-control.module';
 import { DayValidatorDirective } from './directives/day-validator.directive';
 import { MonthValidatorDirective } from './directives/month-validator.directive';
+import { YearValidatorDirective } from './directives/year-validator.directive';
 
 @NgModule({
-  declarations: [AppComponent, DayValidatorDirective, MonthValidatorDirective],
+  declarations: [AppComponent, DayValidatorDirective, MonthValidatorDirective, YearValidatorDirective],
   imports: [
     BrowserModule,
     AppRoutingModule,

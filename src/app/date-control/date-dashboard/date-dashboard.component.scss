@@ -28,13 +28,17 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 20px;
+    margin-top: 30px;
+    font-size: 30px;
+    color: rgb(255, 38, 0);
     .age-text {
       font-size: 60px;
       margin-top: 50px;
       font-weight: 900;
       font-style: italic;
+      color: #69f0ae;
     }
+
     .white {
       color: aliceblue;
     }

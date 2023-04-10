@@ -67,23 +67,23 @@
     </form>
   </div>
   <div class="button-div">
-    <button
-      mat-raised-button
-      color="accent"
-      (click)="calculateAge()"
-      [disabled]="ageForm.invalid"
-    >
+    <button mat-raised-button color="accent" (click)="calculateAge()">
       Calculate
     </button>
   </div>
 
   <div class="age-div" *ngIf="age">
-    <div class="age-text">{{ age.years }} <span class="white">years</span></div>
-
-    <div class="age-text">
-      {{ age.months }} <span class="white">month</span>
+    <div *ngIf="age.years !== -1; else elseBlock">
+      <div class="age-text">
+        {{ age.years }} <span class="white">years</span>
+      </div>
+      <div class="age-text">
+        {{ age.months }} <span class="white">month</span>
+      </div>
+      <div class="age-text">{{ age.days }} <span class="white">day</span></div>
     </div>
 
-    <div class="age-text">{{ age.days }} <span class="white">day</span></div>
+  
+    <ng-template #elseBlock> Opps ! Date is in future </ng-template>
   </div>
 </div>

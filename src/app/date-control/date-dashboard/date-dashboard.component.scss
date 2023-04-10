@@ -40,3 +40,30 @@
     }
   }
 }
+
+@media (max-width: 900px) {
+  .date-input-block {
+    width: 200px;
+    .date-input-div {
+      flex-direction: column;
+      mat-form-field {
+        margin: 1.25em 0;
+      }
+    }
+    .age-div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 20px;
+      .age-text {
+        font-size: 46px;
+        margin-top: 50px;
+        font-weight: 900;
+        font-style: italic;
+      }
+      .white {
+        color: aliceblue;
+      }
+    }
+  }
+}
